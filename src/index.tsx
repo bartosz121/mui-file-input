@@ -121,7 +121,9 @@ function MuiFileInput<T extends boolean = false>(props: MuiFileInputProps<T>) {
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">
-            <AttachFileIcon />
+            <IconButton onClick={() => inputRef.current?.click()}>
+              <AttachFileIcon />
+            </IconButton>
           </InputAdornment>
         ),
         endAdornment: (
