@@ -16,6 +16,7 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/mui-file-input.es.js",
       "require": "./dist/mui-file-input.umd.js"
     }
@@ -36,6 +37,7 @@
     "file"
   ],
   "scripts": {
+    "build2": "vite build",
     "build": "npm run lint && npm run test -- run && vite build",
     "lint": "tsc && eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "npm run lint -- --fix",
