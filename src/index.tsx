@@ -29,7 +29,8 @@ function MuiFileInput<T extends boolean = false>(props: MuiFileInputProps<T>) {
     getInputText,
     getSizeText,
     placeholder,
-    hideSizeText,
+    truncateInputTextAfter = 5,
+    hideSizeText = true,
     inputProps,
     InputProps,
     multiple,
@@ -88,7 +89,8 @@ function MuiFileInput<T extends boolean = false>(props: MuiFileInputProps<T>) {
     }
     if (value && hasAtLeastOneFile) {
       if (Array.isArray(value) && value.length > 1) {
-        return `${value.length} files`
+        if(value.length > truncateInputTextAfter) return `${value.length} files`
+        return value.map((file) => file.name).join(', ')
       }
       const filename = matchIsFile(value) ? value.name : value[0]?.name || ''
       return truncateText(filename, 20)
