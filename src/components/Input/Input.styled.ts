@@ -2,6 +2,8 @@ import { styled } from '@mui/material/styles'
 
 const Label = styled('label')`
   position: relative;
+  cursor: pointer !important;
+  flex-grow: 1;
 
   input {
     opacity: 0 !important;
@@ -21,8 +23,8 @@ const Label = styled('label')`
   span.MuiFileInput-placeholder {
     color: gray;
   }
-`
+`;
 
 export default {
-  Label
-}
+  Label,
+};
